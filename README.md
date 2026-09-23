@@ -15,7 +15,7 @@ Práctica 1 de Interfaces Inteligentes
 </details>
 
 ## Ejercicio 1
-Este ejercicio pide crear un script que asigne un color a un objeto y que, posteriormente, cada intervalo de frames altere una componente RGB al azar. El intervalo de frames debe ser inicializado a 120 y debe ser posible cambiarlo a través del inspector.
+Este ejercicio pide crear un script que asigne un color a un objeto y que, posteriormente, en cada intervalo de frames altere una componente RGB al azar. El intervalo de frames debe ser inicializado a 120 y debe ser posible cambiarlo a través del inspector.
 
 ### Hitos 
 * Asociar a un objeto de la escena un script
@@ -37,7 +37,27 @@ Prueba para 300 frames
 
 
 ## Ejercicio 2
+El ejercicio consiste en realizar una serie de operaciones básicas sobre vectores: magnitud, angulo entre dos vectors, distancia y obtener cual se encuentra a mayor altura.
 
+### Hitos
+ * Aprender y aplicar los métodos de Vector3
+ * Mostrar datos en el inspector sin permitir su modificación
+ * Ejecutar código cuando se detecta un cambio en las variables
+
+### Implementación
+Para representar los vectores he utilizado instancias de `Vector3` tal y como pide el enunciado./
+Las medidas se calculan dentro del método `OnValidate()` que se ejecuta cada vez que se detecta un cambio en las variables públicas de clase (vector 1 o vector2)
+Para calcular las medidas se hacen llamadas a los métodos de la propia clase Vector3.
+
+### Pruebas
+GIF de prueba
+![GIF](Ejercicio2/ejercicio2.gif)
+Prueba con vectores iguales
+![Prueba vectores iguales](Ejercicio2/Ejercicio2Iguales.png)
+Prueba con el Vector 1 más alto
+![Prueba vectores mayor](Ejercicio2/Ejercicio2Mayor.png)
+Prueba con el Vector 2 más alto
+![Prueba vectores menor](Ejercicio2/Ejercicio2Menor.png)
 
 ## Ejercicio 3
 

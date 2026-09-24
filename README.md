@@ -37,7 +37,7 @@ Prueba para 300 frames
 
 
 ## Ejercicio 2
-El ejercicio consiste en realizar una serie de operaciones básicas sobre vectores: magnitud, angulo entre dos vectors, distancia y obtener cual se encuentra a mayor altura.
+El ejercicio consiste en realizar una serie de operaciones básicas sobre vectores: magnitud, ángulo entre dos vectors, distancia y obtener cual se encuentra a mayor altura.
 
 ### Hitos
  * Aprender y aplicar los métodos de Vector3
@@ -45,7 +45,8 @@ El ejercicio consiste en realizar una serie de operaciones básicas sobre vector
  * Ejecutar código cuando se detecta un cambio en las variables
 
 ### Implementación
-Para representar los vectores he utilizado instancias de `Vector3` tal y como pide el enunciado./
+Para representar los vectores he utilizado instancias de `Vector3` tal y como pide el enunciado.
+
 Las medidas se calculan dentro del método `OnValidate()` que se ejecuta cada vez que se detecta un cambio en las variables públicas de clase (vector 1 o vector2)
 Para calcular las medidas se hacen llamadas a los métodos de la propia clase Vector3.
 
@@ -60,6 +61,10 @@ Prueba con el Vector 2 más alto
 ![Prueba vectores menor](Ejercicio2/Ejercicio2Menor.png)
 
 ## Ejercicio 3
+Consiste en mostrar en la pantalla un texto con la posición de un componente, en este caso una esfera.
+Para ello se utiliza la función `OnGUI()` que muestra elementos en la pantalla, para mostrar un texto usamos `Label`.
 
+Prueba del ejercicio
+![GIF2](Ejercicio3/ejercicio3.gif)
 
 ## Ejercicio 4

@@ -12,10 +12,10 @@ public class ColorChange : MonoBehaviour
     {
         initialFrame = Time.frameCount;
 
-        float red = Random.Range(0f, 1f);
-        float green = Random.Range(0f, 1f);
-        float blue = Random.Range(0f, 1f);
-        color = new Vector3(red, green, blue);
+        for (int i = 0; i < 3; i++)
+        {
+            color[i] = Random.Range(0f, 1f);
+        }
         rd = GetComponent<Renderer>();
         ChangeColor();
     }

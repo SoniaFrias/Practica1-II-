@@ -47,7 +47,7 @@ El ejercicio consiste en realizar una serie de operaciones básicas sobre vector
 ### Implementación
 Para representar los vectores he utilizado instancias de `Vector3` tal y como pide el enunciado.
 
-Las medidas se calculan dentro del método `OnValidate()` que se ejecuta cada vez que se detecta un cambio en las variables públicas de clase (vector 1 o vector2)
+Las medidas se calculan dentro del método `OnValidate()` que se ejecuta cada vez que se detecta un cambio en las variables públicas en el inspector.
 Para calcular las medidas se hacen llamadas a los métodos de la propia clase Vector3.
 
 ### Pruebas
@@ -64,7 +64,20 @@ Prueba con el Vector 2 más alto
 Consiste en mostrar en la pantalla un texto con la posición de un componente, en este caso una esfera.
 Para ello se utiliza la función `OnGUI()` que muestra elementos en la pantalla, para mostrar un texto usamos `Label`.
 
-Prueba del ejercicio
+### Prueba
 ![GIF2](Ejercicio3/ejercicio3.gif)
 
 ## Ejercicio 4
+Para el último ejercicio de la práctica se pide asociar un script a la esfera que muestre por consola la distancia a un cubo y una esfera que se encuentran en la escena.
+
+### Hitos 
+ * Obtener referencias a otros objetos de la escena
+ * Asignar etiquetas a los objetos
+
+### Implementación
+Al igual que en el ejercicio 2 se usan los métodos de la clase `Vector3` para calcular la distancia entre vectores, que en este caso representan la posición de los elementos en la escena. 
+Para obtener las referencias a los objetos que se piden se utiliza el método `GameObject.FindWithTag("Sphere")`.
+En este caso, dado que no se especifica en el enunciado que se deba actualizar la posición de los elementos en la escena se ha implementado todo en el `Start()`
+
+### Prueba
+![GIF](Ejercicio4/ejercicio4.gif)

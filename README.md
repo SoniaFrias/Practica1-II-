@@ -86,11 +86,14 @@ En este caso, dado que no se especifica en el enunciado que se deba actualizar l
 ## Ejercicio 5
 El ejercicio pide implementar un script que cuente con una variable publica delta que represente un desplazamiento en los 3 ejes (x,y,z) y se asigne a 3 objetos distintos. Cuando se pulse el espacio debe desplazarse teniendo en cuenta el desplazamiento establecido.
 
-### Hitos 
- * Capturar cuando una tecla ha sido pulsada
-
 ### Implementación
 Para saber si una tecla ha sido pulsada se usa `Input.GetAxis()`, sin embargo este método devuelve un valor de en el rango [0,1] para los ejes unidirecionales (como es el caso de `Jump`, el eje que buscamos). El valor devuelto por este método incrementa en el tiempo mientras se esté pulsando, esto implica que si simplemente se comprueba `Input.GetAxis('Jump')` el desplazamiento se aplique múltiples veces y no solo en el momento de pulsar la tecla, para ello he añadido una variable que controla si en el instante anterior estaba siendo pulsado o no, para que el desplazamiento se aplique de forma correcta.
 
 ### Prueba
 ![GIF](Ejercicio5/gif.gif)
+
+## Ejercicio 6
+Este ejercicio consiste en detectar cada vez que se pulsa una tecla en concreto y calcular el valor del axis multiplicado por una constante de velocidad. Dado que `Input.GetKey()` retorna verdadero mientras se está pulsando la tecla y no solo en el punto de pulsar o levantar se obtienen múltiples valores, obteniendo la progresión de la velocidad en lugar de un único valor.
+
+### Prueba
+![GIF](Ejercicio6/gif.gif)

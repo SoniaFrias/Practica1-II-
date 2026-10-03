@@ -12,6 +12,15 @@ Práctica 1 de Interfaces Inteligentes
   3. [Ejercicio 3](#Ejercicio-3)
   4. [Ejercicio 4](#Ejercicio-4)
   5. [Ejercicio 5](#Ejercicio-5)
+  6. [Ejercicio 6](#Ejercicio-6)
+  7. [Ejercicio 7](#Ejercicio-7)
+  8. [Ejercicio 8](#Ejercicio-8)
+  9. [Ejercicio 9](#Ejercicio-9)
+  10. [Ejercicio 10](#Ejercicio-10)
+  11. [Ejercicio 11](#Ejercicio-11)
+  12. [Ejercicio 12](#Ejercicio-12)
+  13. [Ejercicio 13](#Ejercicio-13)
+
 
 </details>
 
@@ -97,3 +106,37 @@ Este ejercicio consiste en detectar cada vez que se pulsa una tecla en concreto 
 
 ### Prueba
 ![GIF](Ejercicio6/gif.gif)
+
+## Ejercicio 7
+Cambiar la tecla de disparo a `h`
+
+### Prueba
+![gif](Ejercicio7/gif.gif)
+
+## Ejercicio 8
+El ejercicio pide asociar al cubo con un script que dado una dirección (Vector3) y la velocidad se mueva el objeto. Además, pide analizar que sucede en las siguientes situaciones:
+
+### 1. Duplicar las coordenadas de la dirección del movimiento
+La velocidad efectiva de traslación se duplica. Dado que el vector director no se normaliza previamente, su magnitud actúa directamente como factor multiplicativo.
+
+### 2. Duplicar la velocidad manteniendo la dirección del movimiento
+La velocidad resultante también se duplica. 
+
+### 3. La velocidad usada es menor que 1
+* **Si 0 < velocida < 1:** El cubo continúa desplazándose en la dirección indicada, pero a menor velocidad
+* **Si velocidad < 0:** El signo negativo invierte el sentido de la dirección
+
+### 4. La posición del cubo tiene y > 0
+La altura no afecta a la traslación del cubo.
+
+### 5. Intercambiar movimiento relativo al sistema de referencia local y mundial
+* **Sistema Local:** El vector de traslación se proyecta sobre los ejes propios del objeto. Por tanto, si el cubo está rotado, un desplazamiento en `(1, 0, 0)` moverá el objeto hacia su propia "derecha local", lo que en la cuadrícula de la escena se verá como una trayectoria diagonal.
+* **Sistema Mundial:** El desplazamiento se proyecta sobre los ejes absolutos del escenario. No importa la rotación del cubo, este se moverá siguiendo los ejes fijos del mundo.
+
+### Prueba
+
+Con el sistema de referencia local
+![gif2](Ejercicio8/gif1.gif)
+
+Con el sistema de referencia mundial
+![gif2](Ejercicio8/gif2.gif)

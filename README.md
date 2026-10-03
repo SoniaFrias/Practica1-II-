@@ -11,6 +11,7 @@ Práctica 1 de Interfaces Inteligentes
   2. [Ejercicio 2](#Ejercicio-2)
   3. [Ejercicio 3](#Ejercicio-3)
   4. [Ejercicio 4](#Ejercicio-4)
+  5. [Ejercicio 5](#Ejercicio-5)
 
 </details>
 
@@ -81,3 +82,15 @@ En este caso, dado que no se especifica en el enunciado que se deba actualizar l
 
 ### Prueba
 ![GIF](Ejercicio4/ejercicio4.gif)
+
+## Ejercicio 5
+El ejercicio pide implementar un script que cuente con una variable publica delta que represente un desplazamiento en los 3 ejes (x,y,z) y se asigne a 3 objetos distintos. Cuando se pulse el espacio debe desplazarse teniendo en cuenta el desplazamiento establecido.
+
+### Hitos 
+ * Capturar cuando una tecla ha sido pulsada
+
+### Implementación
+Para saber si una tecla ha sido pulsada se usa `Input.GetAxis()`, sin embargo este método devuelve un valor de en el rango [0,1] para los ejes unidirecionales (como es el caso de `Jump`, el eje que buscamos). El valor devuelto por este método incrementa en el tiempo mientras se esté pulsando, esto implica que si simplemente se comprueba `Input.GetAxis('Jump')` el desplazamiento se aplique múltiples veces y no solo en el momento de pulsar la tecla, para ello he añadido una variable que controla si en el instante anterior estaba siendo pulsado o no, para que el desplazamiento se aplique de forma correcta.
+
+### Prueba
+![GIF](Ejercicio5/gif.gif)

@@ -15,6 +15,7 @@ public class Move3 : MonoBehaviour
         Vector3 direction = sphere.transform.position - transform.position;
         direction.y = 0;
         direction = direction.normalized;
-        transform.Translate(direction * speed * Time.deltaTime); 
+        transform.Translate(direction * speed * Time.deltaTime, Space.World); 
+        transform.LookAt(sphere.transform);
     }
 }

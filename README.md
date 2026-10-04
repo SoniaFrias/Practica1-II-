@@ -160,3 +160,22 @@ Para este script guardo una referencia a la esfera mediante `FindWithTag`que usa
 
 ### Prueba
 ![gif](Ejercicio11/gif.gif)
+
+## Ejercicio 12
+El ejercicio pide modificar el script anterior para que el cubo siempre mire hacia la esfera, para ello utilizo `LookAt()` y cambio el sistema de referencia al sistema del mundo para que el movimiento sea correcto.
+
+### Prueba
+![gif](Ejercicio12/gif.gif)
+
+## Ejercicio 13
+El cubo de moverse constantemente hacia delante mientras cambiamos su dirección girándolo. Para ello, debemos aplicar la rotación (`Rotate`) en el eje y, capturando el movimiento a través del eje Horizontal.
+
+Para que se mueva constantemente hacia delante usamos el método `Translate`. Sin embargo, podemos hacerlo de dos formas distintas según si tomamos como coordenadas el sistema local o el sistema del mundo. 
+
+ * Sistema local: tomamos como vector de dirección `Vector3.forward`
+ * Sistema global: tomamos como vector de dirección `transform.forward`
+
+Esto se debe a que cuando se utiliza el sistema local se aplica la transformación para cambiar de sistema de coordenadas, mientras que en el sistema global ya que se da por hecho que la dirección siempre se expresa en el sistema de coordenadas global.
+
+### Prueba
+![gif](Ejercicio13/gif.gif)

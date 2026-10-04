@@ -96,7 +96,7 @@ En este caso, dado que no se especifica en el enunciado que se deba actualizar l
 El ejercicio pide implementar un script que cuente con una variable publica delta que represente un desplazamiento en los 3 ejes (x,y,z) y se asigne a 3 objetos distintos. Cuando se pulse el espacio debe desplazarse teniendo en cuenta el desplazamiento establecido.
 
 ### Implementación
-Para saber si una tecla ha sido pulsada se usa `Input.GetAxis()`, sin embargo este método devuelve un valor de en el rango [0,1] para los ejes unidirecionales (como es el caso de `Jump`, el eje que buscamos). El valor devuelto por este método incrementa en el tiempo mientras se esté pulsando, esto implica que si simplemente se comprueba `Input.GetAxis('Jump')` el desplazamiento se aplique múltiples veces y no solo en el momento de pulsar la tecla, para ello he añadido una variable que controla si en el instante anterior estaba siendo pulsado o no, para que el desplazamiento se aplique de forma correcta.
+Para saber si una tecla ha sido pulsada se usa `Input.GetAxis()`, sin embargo este método devuelve un valor de en el rango [0,1] para los ejes unidirecionales (como es el caso de `Jump`, el eje que buscamos). El valor devuelto por este método incrementa en el tiempo mientras se esté pulsando, esto implica que si simplemente se comprueba `Input.GetAxis('Jump')` el desplazamiento se aplique múltiples veces y no solo en el momento de pulsar la tecla.
 
 ### Prueba
 ![GIF](Ejercicio5/gif.gif)
@@ -108,7 +108,7 @@ Este ejercicio consiste en detectar cada vez que se pulsa una tecla en concreto 
 ![GIF](Ejercicio6/gif.gif)
 
 ## Ejercicio 7
-Cambiar la tecla de disparo a `h`
+Cambiar la tecla de disparo a `h`.
 
 ### Prueba
 ![gif](Ejercicio7/gif.gif)
@@ -136,7 +136,27 @@ La altura no afecta a la traslación del cubo.
 ### Prueba
 
 Con el sistema de referencia local
-![gif2](Ejercicio8/gif1.gif)
+![gif2](Ejercicio8/gif2.gif)
 
 Con el sistema de referencia mundial
-![gif2](Ejercicio8/gif2.gif)
+![gif2](Ejercicio8/gif1.gif)
+
+## Ejercicio 9
+Para este ejercicio se pide mover dos objetos de la escena utilizando distintos controles para cada uno de ellos. Dado que el código a ejecutar es el mismo pero con la diferencia de los controles he utilizado el mismo script al que se le asignan los controles correspondientes en el inspector mediante 4 variables de tipo KeyCode.
+
+### Prueba
+![gif](Ejercicio9/gif.gif)
+
+## Ejercicio 10
+Para adaptar el movimiento para que sea proporcional al tiempo transcurrido durante la generación del frame simplemente multiplicamos por `Time.deltatime`.
+
+### Prueba 
+![gif](Ejercicio10/gif.gif)
+ 
+## Ejercicio 11
+El ejercicio pide modificar el script anterior para el cubo. Dado que el cubo y la esfera compartían el mismo script he dejado el script intacto y he creado uno nuevo para el cubo. 
+
+Para este script guardo una referencia a la esfera mediante `FindWithTag`que usaré en el update para calcular el vector dirección que debe utilizar el cubo para desplazarse hacia la esfera. Para que no influya la distancia en la velocidad he normalizado el vector resultante de restar la posición de la esfera y la del cubo con `normalize()` y para que el desplazamiendo sea proporcional al tiempo trascurrido he usado `Time.deltatime` junto a la velocidad establecida en el inspector. Además, se ha de tener en cuenta que la componente `y` del cubo no debe cambiar, esto podría suceder si la esfera no se encuentra a la misma altura, por ello añado `direction.y = 0` para asegurarlo.
+
+### Prueba
+![gif](Ejercicio11/gif.gif)

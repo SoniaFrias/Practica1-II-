@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Move2 : MonoBehaviour
+public class Move2_2 : MonoBehaviour
 {
     public float speed;
 

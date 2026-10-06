@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Move3 : MonoBehaviour
+public class Move4 : MonoBehaviour
 {
     public float speed;
     private GameObject sphere;
